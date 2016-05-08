@@ -102,6 +102,3 @@
 	</script>
 	<!-- {/literal} END JIVOSITE CODE -->
 </body>	
-</html>
-
-EDIT INI
