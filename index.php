@@ -82,7 +82,7 @@
 	
 	<!-- Footer -->
 	<div class="footer">
-		<i class="fa fa-copyright"></i>2015. Dibuat oleh IT Club SMAN 1 Cibadak
+		<i class="fa fa-copyright"></i>2016. Dibuat oleh IT Club SMAN 1 Cibadak
 	</div>
 	<!-- Akhir Footer -->
 	<script>
