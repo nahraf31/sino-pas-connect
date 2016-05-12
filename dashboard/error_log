@@ -1,0 +1,104 @@
+[06-May-2016 14:22:28 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:22:28 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:22:28 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:22:28 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:22:28 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:22:28 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:23:12 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:23:12 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:23:12 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:23:12 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:23:12 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:23:12 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:24:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:24:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:24:23 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 70
+[06-May-2016 14:24:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:24:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:24:23 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 77
+[06-May-2016 14:26:29 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:26:29 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:26:29 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:26:29 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:26:29 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:26:29 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:26:34 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:26:34 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:26:34 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:26:34 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:26:34 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:26:34 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:27:41 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:27:41 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:27:41 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:27:41 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:27:41 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:27:41 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:29:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:29:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:29:23 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:29:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:29:23 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:29:23 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:30:14 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:30:14 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:30:14 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:30:14 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.php): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:30:14 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.php): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:30:14 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:31:54 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:31:54 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:31:54 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:31:54 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.php): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:31:54 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.php): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:31:54 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:32:33 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:32:33 Asia/Jakarta] PHP Warning:  include(..assets/inc/sidebar.html): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:32:33 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/sidebar.html' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 68
+[06-May-2016 14:32:33 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.php): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:32:33 Asia/Jakarta] PHP Warning:  include(..assets/inc/navbar.php): failed to open stream: No such file or directory in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[06-May-2016 14:32:33 Asia/Jakarta] PHP Warning:  include(): Failed opening '..assets/inc/navbar.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 75
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: nis in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 160
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: tempat_lahir in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 164
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: tanggal_lahir in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 164
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: kelamin in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 168
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: agama in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 172
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: status in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 176
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: anak_ke in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 180
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: alamat_siswa in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 184
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: no_telpon_anak in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 188
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: asal_sekolah in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 192
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: asal_kelas in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 196
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: tgl_terima in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 200
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: nama_ayah in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 204
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: nama_ibu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 208
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: alamat_ortu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 212
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: no_telpon_ortu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 216
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: pekerjaan_ayah in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 220
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: pekerjaan_ibu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 224
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: nama_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 228
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: alamat_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 232
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: no_telpon_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 236
+[07-May-2016 01:57:35 Asia/Jakarta] PHP Notice:  Undefined variable: pekerjaan_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 240
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: nis in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 160
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: tempat_lahir in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 164
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: tanggal_lahir in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 164
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: kelamin in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 168
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: agama in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 172
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: status in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 176
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: anak_ke in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 180
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: alamat_siswa in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 184
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: no_telpon_anak in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 188
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: asal_sekolah in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 192
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: asal_kelas in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 196
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: tgl_terima in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 200
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: nama_ayah in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 204
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: nama_ibu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 208
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: alamat_ortu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 212
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: no_telpon_ortu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 216
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: pekerjaan_ayah in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 220
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: pekerjaan_ibu in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 224
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: nama_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 228
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: alamat_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 232
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: no_telpon_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 236
+[07-May-2016 15:32:58 Asia/Jakarta] PHP Notice:  Undefined variable: pekerjaan_wali in /home/itcsmand/public_html/sino/new/dashboard/home.php on line 240
