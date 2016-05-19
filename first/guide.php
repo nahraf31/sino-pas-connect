@@ -39,190 +39,209 @@
 	}
 ?>
 <!DOCTYPE html>
-  <html>
-    <head>
-		<title><?php echo $nama_siswa ?> - SINO</title>
-		<!--Import Google Icon Font-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-		<link rel="icon" type="image/x-icon" href="../assets/images/favicon.png"/>
-		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="../assets/css/materialize.min.css"  media="screen,projection"/>
-		<link type="text/css" rel="stylesheet" href="../assets/css/custom.css"  media="screen,projection"/>
-		<link rel="stylesheet" href="../assets/font/font-awesome/css/font-awesome.min.css">
-		<!--Let browser know website is optimized for mobile-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-	<body>
-		<!-- Navbar-->
-		<nav>
-			<div class="nav-wrapper">
-				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right">	
-				<li id="notification_li">
-					<a href="#" id="notificationLink"><i class="fa fa-bell-o"></i></a>
-						<div id="notificationContainer">
-							<div id="notificationTitle">Pemberitahuan</div>				
-								<div id="notificationsBody" class="notifications">
-								<?php
-									$view=$pdo->query("SELECT info FROM info ORDER BY id_info desc");
-									while($row = $view->fetch(PDO::FETCH_ASSOC)){
-								?>
-										<ul class="collection">
-											<li class="collection-item avatar">
-												<i class="material-icons circle green">insert_chart</i>
-												<p><?php echo $row['info'];?></p>
-											</li>
-										</ul>
-								<?php
-									}
-								?>
-								</div>
-						</div>
-					</li>
-					<li>
-						<a href="../dashboard/logout"><i class="fa fa-sign-out"></i></a>
-					</li>
-				</ul>
-				<ul class="side-nav" id="mobile-demo">
-					<div class="logo">
-						<a href="../dashboard/"><img class="logo-sino" src="../assets/images/logo-sino-dark.png"></a>
-					</div>
-					<p class="text"><span><?php echo $nama_siswa; ?></span></br><?php echo $nama_kelas; ?></p>
-					<!-- 
-					<li class="active"><a href="../dashboard/">Home</a></li>
-					<li><a href="nilai/uhar.php">Ulangan Harian</a></li>
-					<li><a href="nilai/uts.php">Ulangan Tengah Semester</a></li>
-					<li><a href="nilai/uas.php">Ulangan Akhir Semester</a></li>
-					<li><a href="settings/">Pengaturan</a></li>
-					-->
-				</ul>
-			</div>
-		</nav>
-		<!-- Akhir Navbar-->
+<html lang="en">
 
-		<!-- Sidebar-->
-		<div class="side-nav fixed">
-			<div class="logo">
-				<a href="../dashboard/"><img class="logo-sino" src="../assets/images/logo-sino-dark.png"></a>
-			</div>
-			<p class="text"><span><?php echo $nama_siswa; ?></span></br><?php echo $nama_kelas; ?></p>
-			<!--
-			<li class="active"><a href="../dashboard/">Home</a></li>
-			<li><a href="nilai/uhar.php">Ulangan Harian</a></li>
-			<li><a href="nilai/uts.php">Ulangan Tengah Semester</a></li>
-			<li><a href="nilai/uas.php">Ulangan Akhir Semester</a></li>
-			<li><a href="settings/">Pengaturan</a></li>
-			-->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Sistem Informasi Nilai Online</title>
+
+    <!-- Memanggil CSS -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+	<!-- Memanggil Font dan Ikon-->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="../assets/images/favicon.png"/>
+</head>
+
+<body>
+<div id="wrapper">
+<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand"><img src="../assets/images/logo-sino-dark.png"></li>
+			<li><a href="../dashboard/"><i class="fa fa-home"></i>&nbsp; &nbsp; Dashboard</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart"></i>&nbsp; &nbsp;Nilai Ulangan &nbsp;<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="nilai/uhar.php">Ulangan Harian</a></li>
+				<li><a href="nilai/uts.php">Ulangan Tengah Semester</a></li>
+				<li><a href="nilai/uas_1.php">Ulangan Akhir Semester</a></li>
+			  </ul>
+			</li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i>&nbsp; &nbsp;Bantuan &nbsp;<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Meet team</a></li>
+				<li><a href="#">Feedback</a></li>
+			  </ul>
+			</li>
+		</ul>
+	</div>
+<!-- Akhir Sidebar -->
+<div id="page-content-wrapper">
+<!-- Menu Atas -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i></a></div>
+			<ul class="nav navbar-right top-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-bell-o"><span class="bubble"></span></i>
+					</a>
+					
+					<ul class="dropdown-menu message-dropdown">
+						<li class="message-header">
+							Notifikasi
+						</li>
+						<?php
+							$view=$pdo->query("SELECT info FROM info ORDER BY id_info desc");
+							while($row = $view->fetch(PDO::FETCH_ASSOC)){
+						?>
+						<li class="message-preview">
+							<p><?php echo $row['info'];?></p>
+						</li>
+						<?php
+							}
+						?>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="settings/"><i class="fa fa-cog"></i>    Pengaturan</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="../dashboard/logout"><i class="fa fa-sign-out"></i>    Logout</a></li>
+					</ul>
+				</li>
+			</ul>
 		</div>
-		<!-- Akhir Sidebar-->
-
-		<!--Konten-->
-		<main>
-			<div class="container">
-				<div class="row">
-					<div class="col s12">
-						<h2>Biodata Siswa<b></b></h2>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col s12">
-						<!-- Modal Structure -->
-						<div id="modal1" class="modal modal-fixed-footer">
-							<div class="modal-content">
-								<h1>Getting Started</h1>
-								<p>Selamat datang di Sistem Informasi Nilai Online, Silahkan isi form dibawah terlebih dahulu.</p>
-								<p class="red-text">*Isi data sesuai raport.</p>
-								<form class="col s12" action="" method="post" name="edit">
-									<input value="" type="hidden" name="id">
-									<div class="input-field col s12">
-										<input value="" id="first_name2" type="text" name="nama" required>
-										<label class="active" for="first_name2">Nama</label>
-									</div>
-									<div class="input-field col s12">
-										<input value="" id="first_name2" type="text" name="nama" required>
-										<label class="active" for="first_name2">Nama</label>
-									</div>
-									<div class="input-field col s12">
-										<input value="" id="first_name2" type="text" name="nama" required>
-										<label class="active" for="first_name2">Nama</label>
-									</div>
-									<button class="btn waves-effect waves-light" href="infosis.php">Back
-									</button>
-									<button class="btn waves-effect waves-light" type="submit" name="submit">Submit
-									</button>
-								</form>
-							</div>
-							<div class="modal-footer">
-								<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				
+	</nav>
+<!-- Akhir Menu Atas -->
+	  
+<!-- Isi Halaman -->
+	<div class="page-header">
+		<ol class="breadcrumb">
+		  <li class="active"><a href="../dashboard/">Dashboard</a></li>
+		</ol>
+		<h1>Dashboard</h1>
+		<h5><?php echo $nama_siswa; ?> <span class="label label-default"><?php echo $nama_kelas; ?></span></h5>
+	</div>
+	<div class="container-fluid">
+		<div class=" page-content biru">
+			<div class="row">
+			  <div class="col-md-9">
+				<div class="hero">Hai <?php echo $nama_siswa; ?>!</div>
+				<div class="sub-hero">Selamat datang di SINO Pas Connect.</div>
+				<p>Melalui aplikasi web ini dapatkan informasi nilai anda secara online, mudah dan cepat. Saran dan masukan Anda sangat diperlukan demi pengembangan aplikasi web ini.</p>
+			  </div>
+			  <div class="col-md-3">
+				  <div class="pull-right">
+					<img src="../assets/images/owl_ex1.png" style="width:120px">
+				  </div>
+			  </div>
 			</div>
-		<!--Akhir Konten-->	
-		
-		<!--Footer-->
-			<div class="footer">
-				<i class="fa fa-copyright"></i>2015. Dibuat oleh IT Club SMAN 1 Cibadak
+		</div>
+		<div class=" page-content">
+			<div class="row">
+				<div class="col-md-12">
+				  <h2>Data Siswa</h2>
+					<form>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Nama Lengkap">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="NISN">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Tempat Lahit">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Tanggal Lahir">
+						<span id="helpBlock" class="help-block">Format tanggal:</span>
+					  </div>
+					  <div class="form-group">
+						<select class="form-control">
+						  <option>--Jenis Kelamin--</option>
+						  <option>Laki-laki</option>
+						  <option>Perempuan</option>
+					    </select>
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Anak ke">
+					  </div>
+					  <div class="form-group">
+						<textarea class="form-control" rows="3" placeholder="Alamat Siswa"></textarea>
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="No Telepon Siswa">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Asal Sekolah">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Diterima di kelas">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Diterima pada tanggal">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Nama Ayah">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Nama Ibu">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Alamat Orang Tua">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Nomor Telepon Rumah">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Pekerjaan Ayah">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Pekerjaan Ibu">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Nama Wali">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Nomor Telepon Wali">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="Pekerjaan Wali">
+					  </div>
+					  <div class="form-group">
+						<input type="text" class="form-control" placeholder="username">
+					  </div>
+					  <div class="form-group">
+						<input type="password" class="form-control" placeholder="Password">
+					  </div>
+					  <button type="submit" class="btn btn-default">Simpan</button>
+					</form>
+				</div>
 			</div>
-		</main>
-		<!--Akhir Footer-->
-		  
-		<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="../assets/js/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../assets/js/materialize.min.js"></script>
-		<script>  $(".button-collapse").sideNav();</script>
-		<script type="text/javascript" src="../assets/js/countup.js"></script>
-		<script type="text/javascript" >
-			$(document).ready(function()
-			{
-			$("#notificationLink").click(function()
-			{
-			$("#notificationContainer").fadeToggle(300);
-			$("#notification_count").fadeOut("slow");
-			return false;
-			});
-
-			//Document Click hiding the popup 
-			$(document).click(function()
-			{
-			$("#notificationContainer").hide();
-			});
-
-			//Popup on click
-			$("#notificationContainer").click(function()
-			{
-			return false;
-			});
-
-			});
-		</script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-77179797-1', 'auto');
-		  ga('send', 'pageview');
-		</script>
-		<script>
-			$('#modal1').openModal(
-			{
-				dismissible: false, // Modal can be dismissed by clicking outside of the modal
-				opacity: .5, // Opacity of modal background
-				in_duration: 300, // Transition in duration
-				out_duration: 200, // Transition out duration
-			}
-			);
-		</script>
-		<!-- BEGIN JIVOSITE CODE {literal} -->
-		<script type='text/javascript'>
-			(function(){ var widget_id = 'br7vcqFLWo';
-			var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/geo-widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
-		</script>
-		<!-- {/literal} END JIVOSITE CODE -->
+		</div>
+	</div>
+    <div class="footer"><i class="fa fa-copyright"></i> 2016. SINO V.4.0 Dibuat oleh IT Club SMAN 1 Cibadak</div>
+<!-- Akhir Halaman -->
+</div>
+</div>
+	
+<!-- Javascript -->
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/sino.js"></script>
+<!-- Akhir Javascript -->
 </body>
 </html>
