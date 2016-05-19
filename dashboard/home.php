@@ -56,7 +56,7 @@
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
 	<!-- Memanggil Font dan Ikon-->
-	<link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="../assets/images/favicon.png"/>
 </head>
@@ -73,7 +73,7 @@
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="nilai/uhar.php">Ulangan Harian</a></li>
 				<li><a href="nilai/uts.php">Ulangan Tengah Semester</a></li>
-				<li><a href="nilai/uas.php">Ulangan Akhir Semester</a></li>
+				<li><a href="nilai/uas_1.php">Ulangan Akhir Semester</a></li>
 			  </ul>
 			</li>
 			<li class="dropdown">
@@ -144,8 +144,10 @@
 				<div class="sub-hero">Selamat datang di SINO Pas Connect.</div>
 				<p>Melalui aplikasi web ini dapatkan informasi nilai anda secara online, mudah dan cepat. Saran dan masukan Anda sangat diperlukan demi pengembangan aplikasi web ini.</p>
 			  </div>
-			  <div class="col-md-3 pull-right">
-				<img src="../assets/images/owl_ex1.png" style="width:120px">
+			  <div class="col-md-3">
+				  <div class="pull-right">
+					<img src="../assets/images/owl_ex1.png" style="width:120px">
+				  </div>
 			  </div>
 			</div>
 		</div>

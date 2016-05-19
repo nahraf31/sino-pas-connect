@@ -37,7 +37,7 @@
     <link href="../../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../../assets/css/style.css" rel="stylesheet">
 	<!-- Memanggil Font dan Ikon-->
-	<link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="../../assets/images/favicon.png"/>
 </head>
@@ -54,7 +54,7 @@
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="uhar.php">Ulangan Harian</a></li>
 				<li><a href="uts.php">Ulangan Tengah Semester</a></li>
-				<li><a href="uas.php">Ulangan Akhir Semester</a></li>
+				<li class="active"><a href="uas_1.php">Ulangan Akhir Semester</a></li>
 			  </ul>
 			</li>
 			<li class="dropdown">
@@ -111,7 +111,8 @@
 	<div class="page-header">
 		<ol class="breadcrumb">
 		  <li><a href="../">Dashboard</a></li>
-		  <li class="active"><a href="uas.php">Nilai UAS</a></li>
+		  <li><a href="uas.php">Nilai UAS</a></li>
+		  <li class="active"><a href="uas_3.php">Semester 3</a></li>
 		</ol>
 		<h1>Dashboard</h1>
 		<h5><?php echo $nama_siswa; ?> <span class="label label-default"><?php echo $nama_kelas; ?></span></h5>
@@ -121,23 +122,65 @@
 			<div class="row">
 			  <div class="col-md-9">
 			    <div class="hero"><?php echo $nama_siswa; ?>,</div>
-				<div class="sub-hero">silakan pilih semester yang ingin ditampilkan.</div>
+				<div class="sub-hero">Silakan pilih semester yang ingin ditampilkan.</div>
 					<nav>
 					  <ul class="pagination">
 						<li><a href="uas_1.php">1</a></li>
 						<li><a href="uas_2.php">2</a></li>
-						<li><a href="uas_3.php">3</a></li>
+						<li class="active"><a href="uas_3.php">3</a></li>
 						<li><a href="uas_4.php">4</a></li>
 						<li><a href="uas_5.php">5</a></li>
 					  </ul>
 					</nav>
 				</div>
-			  <div class="col-md-3 pull-right">
-				<img src="../../assets/images/owl_ex1.png" style="width:120px">
+			  <div class="col-md-3">
+				  <div class="pull-right">
+					<img src="../../assets/images/owl_ex1.png" style="width:120px">
+				  </div>
 			  </div>
 			</div>
 		</div>
-	</div>
+		<div class="page-content">
+			<div class="row">
+			
+				<h2>Semester 3</h2>
+			</div>
+			<div class="row">
+			<?php
+								$view = $pdo->query("SELECT nama_pelajaran, nilai, kkm, jenis FROM tbl_nilai nilai, setup_pelajaran pelajaran WHERE nilai.no_peserta='$no_peserta' and nilai.id_pelajaran=pelajaran.id_pelajaran ORDER BY pelajaran.nama_pelajaran asc");
+				
+								$i = 1;
+								while($row = $view->fetch(PDO::FETCH_ASSOC)){
+							?>
+				<div class="col-md-3" style="text-align:center">
+				
+							<?php	
+									if ($row['jenis'] == 3 ) {
+										if ($row['nilai'] >= $row['kkm']) { ?>
+											<div class="nilai lulus">
+												<div class="rate" data-count="<?php echo $row['nilai']; ?>"></div>
+												<span><?php echo $row['nama_pelajaran']; ?></span>
+											</div>
+							<?php
+										} else if ($row['nilai'] < $row['kkm']) { 
+							?>			
+										<div class="nilai tidak-lulus">
+											<div class="rate" data-count="<?php echo $row['nilai']; ?>"></div>
+											<span><?php echo $row['nama_pelajaran']; ?></span>
+										</div>
+							<?php 		
+										} 
+							
+							?>
+							
+				</div>
+				<?php
+							$i++;
+						}
+					}
+				?>
+			</div>
+		</div>
     <div class="footer"><i class="fa fa-copyright"></i> 2016. SINO V.4.0 Dibuat oleh IT Club SMAN 1 Cibadak</div>
 <!-- Akhir Halaman --> 
 

@@ -54,7 +54,7 @@
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="uhar.php">Ulangan Harian</a></li>
 				<li><a href="uts.php">Ulangan Tengah Semester</a></li>
-				<li><a href="uas_1.php">Ulangan Akhir Semester</a></li>
+				<li class="active"><a href="uas_1.php">Ulangan Akhir Semester</a></li>
 			  </ul>
 			</li>
 			<li class="dropdown">
@@ -112,7 +112,7 @@
 		<ol class="breadcrumb">
 		  <li><a href="../">Dashboard</a></li>
 		  <li><a href="uas.php">Nilai UAS</a></li>
-		  <li class="active"><a href="uas_1.php">Semester 1</a></li>
+		  <li class="active"><a href="uas_2.php">Semester 2</a></li>
 		</ol>
 		<h1>Dashboard</h1>
 		<h5><?php echo $nama_siswa; ?> <span class="label label-default"><?php echo $nama_kelas; ?></span></h5>
@@ -125,8 +125,8 @@
 				<div class="sub-hero">Silakan pilih semester yang ingin ditampilkan.</div>
 					<nav>
 					  <ul class="pagination">
-						<li class="active"><a href="uas_1.php">1</a></li>
-						<li><a href="uas_2.php">2</a></li>
+						<li><a href="uas_1.php">1</a></li>
+						<li class="active"><a href="uas_2.php">2</a></li>
 						<li><a href="uas_3.php">3</a></li>
 						<li><a href="uas_4.php">4</a></li>
 						<li><a href="uas_5.php">5</a></li>
@@ -143,7 +143,7 @@
 		<div class="page-content">
 			<div class="row">
 			
-				<h2>Semester 1</h2>
+				<h2>Semester 2</h2>
 			</div>
 			<div class="row">
 			<?php
@@ -155,7 +155,7 @@
 				<div class="col-md-3" style="text-align:center">
 				
 							<?php	
-									if ($row['jenis'] == 1 ) {
+									if ($row['jenis'] == 2 ) {
 										if ($row['nilai'] >= $row['kkm']) { ?>
 											<div class="nilai lulus">
 												<div class="rate" data-count="<?php echo $row['nilai']; ?>"></div>
