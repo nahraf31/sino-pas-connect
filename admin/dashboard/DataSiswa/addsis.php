@@ -62,7 +62,7 @@
 				</div>
 				<div class="row">
 					<p class="red-text">*Download panduan terlebih dahulu.</p>
-					<a href="#" class="waves-effect waves-light btn">Panduan</a>
+					<a href="../../files/PETUNJUK1.pdf" class="waves-effect waves-light btn">Panduan</a>
 					<a href="../../files/Master%20Datsis.xlsx" class="waves-effect waves-light btn">Master Siswa</a>
 					<a href="../../files/Master%20tbl_ruangan.xlsx" class="waves-effect waves-light btn">Master Ruangan</a>
 					<a href="http://hayageek.com/examples/php/xls-to-csv/convert.php" target="_blank" class="waves-effect waves-light btn">Convert</a>
@@ -89,7 +89,7 @@
 								if(($data[0] != "NAMA_SISWA") && ($data[0] != "")) {
 									$import= $pdo->query ("INSERT into data_siswa (nama_siswa,nis,no_peserta,username,password) values('$data[0]','$data[1]','$data[2]','$data[3]','$data[4]')");
 								}
-								 //data array sesuaikan dengan jumlah kolom pada CSV anda mulai dari “0” bukan “1”
+								 //data array sesuaikan dengan jumlah kolom pada CSV anda mulai dari â€œ0â€ bukan â€œ1â€
 							}
 					 
 							fclose($handle); //Menutup CSV file
@@ -132,7 +132,7 @@
 								if(($data[0] != "NIS") && ($data[0] != "")) {
 									$import= $pdo->query ("INSERT into tbl_ruangan (nis,id_kelas) values('$data[0]','$data[1]')");
 								}
-								 //data array sesuaikan dengan jumlah kolom pada CSV anda mulai dari “0” bukan “1”
+								 //data array sesuaikan dengan jumlah kolom pada CSV anda mulai dari â€œ0â€ bukan â€œ1â€
 							}
 					 
 							fclose($handle); //Menutup CSV file
