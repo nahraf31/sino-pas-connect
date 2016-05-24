@@ -37,6 +37,40 @@
 		$nama_kelas=0;
 		header('Location: ../'); 
 	}
+	
+	/*
+	**Nanti diterusin, wareugah :"
+	
+	if(isset($_POST['setup'])) {
+		//$username=$_POST['user'];
+		//$pass=$_POST['pass'];
+		$nama_siswa = $_POST['nama_siswa'];
+		$nis=$_POST['nis'];
+		$nama_kelas=$_POST['nama_kelas'];
+		$tempat_lahir=$_POST['tempat_lahir'];
+		$tanggal_lahir=$_POST['tanggal_lahir'];
+		$kelamin=$_POST['kelamin'];
+		$agama=$_POST['agama'];
+		$status=$_POST['status'];
+		$anak_ke=$_POST['anak_ke'];
+		$alamat_siswa=$_POST['alamat_siswa'];
+		$no_telpon_anak=$_POST['no_telpon_anak'];
+		$asal_sekolah=$_POST['asal_sekolah'];
+		$asal_kelas=$_POST['asal_kelas'];
+		$tgl_terima=$_POST['tgl_terima'];
+		$nama_ayah=$_POST['nama_ayah'];
+		$nama_ibu=$_POST['nama_ibu'];
+		$alamat_ortu=$_POST['alamat_ortu'];
+		$no_telpon_ortu=$_POST['no_telpon_ortu'];
+		$pekerjaan_ayah=$_POST['pekerjaan_ayah'];
+		$pekerjaan_ibu=$_POST['pekerjaan_ibu'];
+		$nama_wali=$_POST['nama_wali'];
+		$alamat_wali=$_POST['alamat_wali'];
+		$no_telpon_wali=$_POST['no_telpon_wali'];
+		$pekerjaan_wali=$_POST['pekerjaan_wali'];
+		echo "HUEY";
+		//$query=$pdo->query("UPDATE data_siswa SET username='$user', password='$pass', nis='$nis', nama_siswa='$nama' WHERE nis='$nis'");
+	} */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,275 +96,249 @@
 </head>
 
 <body>
-<div class="container-fluid">
-<h1 style="text-align:center">Registrasi dan verifikasi data siswa</h1>
-<div class="container">
-<div class=" page-content">
-    <div class="row">
-        <div class="wizard">
-            <div class="wizard-inner">
-                <div class="connecting-line"></div>
-                <ul class="nav nav-tabs" role="tablist">
+<div id="wrapper">
+<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand"><img src="../assets/images/logo-sino-dark.png"></li>
+			<li><a href="../dashboard/"><i class="fa fa-home"></i>&nbsp; &nbsp; Dashboard</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart"></i>&nbsp; &nbsp;Nilai Ulangan &nbsp;<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="nilai/uhar.php">Ulangan Harian</a></li>
+				<li><a href="nilai/uts.php">Ulangan Tengah Semester</a></li>
+				<li><a href="nilai/uas_1.php">Ulangan Akhir Semester</a></li>
+			  </ul>
+			</li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i>&nbsp; &nbsp;Bantuan &nbsp;<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Meet team</a></li>
+				<li><a href="#">Feedback</a></li>
+			  </ul>
+			</li>
+		</ul>
+	</div>
+<!-- Akhir Sidebar -->
+<div id="page-content-wrapper">
+<!-- Menu Atas -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i></a></div>
+			<ul class="nav navbar-right top-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-bell-o"><span class="bubble"></span></i>
+					</a>
+					
+					<ul class="dropdown-menu message-dropdown">
+						<li class="message-header">
+							Notifikasi
+						</li>
+						<?php
+							$view=$pdo->query("SELECT info FROM info ORDER BY id_info desc");
+							while($row = $view->fetch(PDO::FETCH_ASSOC)){
+						?>
+						<li class="message-preview">
+							<p><?php echo $row['info'];?></p>
+						</li>
+						<?php
+							}
+						?>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+					<ul class="dropdown-menu">
+						<li><a href="settings/"><i class="fa fa-cog"></i>    Pengaturan</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="../dashboard/logout"><i class="fa fa-sign-out"></i>    Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+<!-- Akhir Menu Atas -->
+	  
+<!-- Isi Halaman -->
+	<div class="page-header">
+		<ol class="breadcrumb">
+		  <li class="active"><a href="../dashboard/">Registration Form</a></li>
+		</ol>
+		<h1>Registration Form</h1>
+		<h5><?php echo $nama_siswa; ?> <span class="label label-default"><?php echo $nama_kelas; ?></span></h5>
+	</div>
+	<div class="container-fluid">
+		<div class=" page-content biru">
+			<div class="row">
+				<div class="col-md-9">
+					<div class="hero">Hai <?php echo $nama_siswa; ?>!</div>
+					<div class="sub-hero">Selamat datang di SINO Pas Connect.</div>
+					<p>Melalui aplikasi web ini dapatkan informasi nilai anda secara online, mudah dan cepat. Saran dan masukan Anda sangat diperlukan demi pengembangan aplikasi web ini.</p>
+				</div>
+				<div class="col-md-3">
+					<div class="pull-right">
+						<img src="../assets/images/owl_ex1.png" style="width:120px">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class=" page-content">
+			<div class="row">
+				<div class="col-md-12">
+					<section>
+						<div class="wizard">
+							<div class="wizard-inner">
+								<div class="connecting-line"></div>
+								<ul class="nav nav-tabs" role="tablist">
 
-                    <li role="presentation" class="active">
-                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Informasi">
-                            <span class="round-tab">
-                                <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </li>
+									<li role="presentation" class="active">
+										<a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+											<span class="round-tab">
+												1
+											</span>
+										</a>
+									</li>
 
-                    <li role="presentation" class="disabled">
-                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li role="presentation" class="disabled">
-                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </li>
-
-                    <li role="presentation" class="disabled">
-                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="fa fa-check" aria-hidden="true"></i>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-            <form role="form">
-                <div class="tab-content">
-                    <div class="tab-pane active" role="tabpanel" id="step1">
-					<div class="step">
-						<img src="../assets/images/owl_ex2.png" style="height: 120px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 25px;">
-						<h2 class="hero" style="text-align:center">Selamat datang di SINO Pas Connect,</h2>
-						<p style="text-align:center">Kami melihat Anda baru pertama kali membuka web ini. Sebelum melanjutkan, isi terlebih dahulu data-data berikut.</p>
-                    </div>
-                        <ul class="list-inline text-center">
-                            <li><button type="button" class="btn btn-primary next-step">Oke, Lanjutkan!</button></li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane" role="tabpanel" id="step2">
-                        <div class="step2">
-						<h2 class="hero" style="text-align:center; margin:none">Isi sesuai data di rapot Anda</h2>
-						<p style="text-align:center;">Gunakan huruf kapital di awal kata</p>
-                            <div class="step_21">
-                                <div class="row">
-                                <form action="" method="POST" name="datsis">
-									<div class="form-group">
-										<label>Nama Lengkap</label>
-										<input type="text" class="form-control" placeholder="Nama Lengkap" name="nama" required>
-										<span id="helpBlock" class="help-block">Isi sesuai yang ada di kartu keluarga(KK) atau KTP</span>
-									</div>
-									<div class="form-group">
-										<label>NISN</label>
-										<input type="text" class="form-control" placeholder="NISN" name="nis" required>
-									</div>
-									  <div class="form-group">
-										<label>Tempat Lahir</label>
-										<input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" required>
-									  </div>
-									<div class="form-group">
-										<label>Tanggal Lahir</label></br>
-										<div class="col-md-4 col-xs-4">
-                                            <select name="visa_status" id="visa_status" class="dropselectsec1">
-                                                <option value="">Tanggal</option>
-                                                <option value="2">1</option>
-                                                <option value="1">2</option>
-                                                <option value="4">3</option>
-                                                <option value="5">4</option>
-                                                <option value="6">5</option>
-                                                <option value="3">6</option>
-                                                <option value="7">7</option>
-                                                <option value="8">8</option>
-                                                <option value="9">9</option>
-												<option value="10">10</option>
-												<option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-												<option value="20">20</option>
-												<option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                                <option value="24">24</option>
-                                                <option value="25">25</option>
-                                                <option value="26">26</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
-												<option value="30">30</option>
-												<option value="31">31</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 col-xs-4">
-                                            <select name="visa_status" id="visa_status" class="dropselectsec1">
-                                                <option value="">Bulan</option>
-                                                <option value="Januari">Januari</option>
-                                                <option value="Februari">Februari</option>
-                                                <option value="Maret">Maret</option>
-                                                <option value="April">April</option>
-                                                <option value="Mei">Mei</option>
-                                                <option value="Juni">Juni</option>
-                                                <option value="Juli">Juli</option>
-                                                <option value="Agustus">Agustus</option>
-                                                <option value="September">September</option>
-												<option value="Oktober">Oktober</option>
-                                                <option value="November">November</option>
-                                                <option value="Desember">Desember</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-4 col-xs-4">
-                                            <select name="visa_status" id="visa_status" class="dropselectsec1">
-                                                <option value="">Tahun</option>
-                                                <option value="2005">2005</option>
-                                                <option value="2004">2004</option>
-                                                <option value="2003">2003</option>
-                                                <option value="2002">2002</option>
-                                                <option value="2001">2001</option>
-                                                <option value="2000">2000</option>
-                                                <option value="1999">1999</option>
-                                                <option value="1998">1998</option>
-                                                <option value="1997">1997</option>
-												<option value="1996">1996</option>
-                                                <option value="1995">1995</option>
-                                                <option value="1994">1994</option>
-                                            </select>
-                                        </div></div>
-									<div class="form-group">
-									<label>Jenis Kelamin</label></br>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Laki-laki
-										</label>
-										<label class="radio-inline">
-										  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Perempuan
-										</label>
-									</div>
-									<div class="form-group">
-										<label>Anak ke</label>
-										<input type="text" class="form-control" placeholder="Misal, 2" name="anak_ke" required>
-									</div>
-									<div class="form-group">
-										<label>Alamat siswa</label>
-										<textarea class="form-control" rows="3" placeholder="Tulis alamat lengkap" name="alamat_siswa" required></textarea>
-									</div>
-									<div class="form-group">
-										<label>No telepon siswa</label>
-										<input type="text" class="form-control" placeholder="No Telepon Siswa" name="no_telpon_anak" required>
-									</div>
-									<div class="form-group">
-										<label>Asal sekolah</label>
-										<input type="text" class="form-control" placeholder="Asal Sekolah" name="asal_sekolah" required>
-									</div>
-									<div class="form-group">
-										<label>Diterima di kelas</label>
-										<input type="text" class="form-control" placeholder="Diterima di kelas" name="asal_kelas" required>
-									</div>
-									<div class="form-group">
-										<label>Diterima pada tanggal</label>
-										<input type="text" class="form-control" placeholder="Diterima pada tanggal" name="tgl_terima" required>
-									</div>
-									<div class="form-group">
-										<label>Nama Ayah</label>
-										<input type="text" class="form-control" placeholder="Nama Ayah" name="nama_ayah" required>
-									</div>
-									<div class="form-group">
-										<label>Nama Ibu</label>
-										<input type="text" class="form-control" placeholder="Nama Ibu" name="nama_ibu" required>
-									</div>
-									<div class="form-group">
-										<label>Alamat Orang Tua</label>
-										<textarea class="form-control" rows="3" placeholder="Tulis alamat lengkap" name="alamat_ortu" required></textarea>
-									</div>
-									<div class="form-group">
-										<label>Nomor Telepon Rumah</label>
-										<input type="text" class="form-control" placeholder="Nomor Telepon Rumah" name="no_telpon_ortu" required>
-									</div>
-									<div class="form-group">
-										<label>Pekerjaan Ayah</label>
-										<input type="text" class="form-control" placeholder="Pekerjaan Ayah" name="pekerjaan_ayah" required>
-									</div>
-									<div class="form-group">
-										<label>Pekerjaan Ibu</label>
-										<input type="text" class="form-control" placeholder="Pekerjaan Ibu" name="pekerjaan_ibu" required>
-									</div>
-									<div class="form-group">
-										<label>Nama Wali</label>
-										<input type="text" class="form-control" placeholder="Nama Wali" nama="nama_wali" required>
-									</div>
-									<div class="form-group">
-										<label>Alamat Wali</label>
-										<textarea class="form-control" rows="3" placeholder="Tulis alamat lengkap" name="alamat_wali" required></textarea>
-									</div>
-									<div class="form-group">
-										<label>Nomor Telepon Wali</label>
-										<input type="text" class="form-control" placeholder="Nomor Telepon Wali" nama="no_telpon_wali" required>
-									</div>
-									<div class="form-group">
-										<label>Pekerjaan Wali</label>
-										<input type="text" class="form-control" placeholder="Pekerjaan Wali" name="pekerjaan_wali" required>
-									</div>
-									<ul class="list-inline pull-right">
-										<li><button type="button" class="btn btn-default prev-step">Sebelumnya</button></li>
-										<li><button type="submit" class="btn btn-primary next-step" name="setup_datsis">Simpan dan lanjutkan</button></li>
-									</ul>
-								</form>
-                                </div>
-                            </div>
-                            <div class="step-22">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" role="tabpanel" id="step3">
-                        <form action="" method="post" name="step2">
-							<div class="form-group">
-								<label>Username</label>
-								<input type="text" class="form-control" placeholder="Username" name="user">
+									<li role="presentation" class="disabled">
+										<a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+											<span class="round-tab">
+												2
+											</span>
+										</a>
+									</li>
+									<li role="presentation" class="disabled">
+										<a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+											<span class="round-tab">
+												3
+											</span>
+										</a>
+									</li>
+								</ul>
 							</div>
-							<div class="form-group">
-								<label>Password</label>
-								<input type="password" class="form-control" placeholder="Password" name="pass">
-							</div>
-							<ul class="list-inline pull-right">
-								<li><button type="button" class="btn btn-default prev-step">Sebelumnya</button></li>
-								<li><button type="submit" class="btn btn-primary next-step" name="setup_user">Simpan</button></li>
-							</ul>
-						</form>
-                    </div>
-                    <div class="tab-pane" role="tabpanel" id="complete">
-                        <div class="step44">
-							<img src="../assets/images/owl_ex2.png" style="height: 120px; display: block; margin-left: auto; margin-right: auto; margin-bottom: 25px;">
-							<h2 class="hero" style="text-align:center">Selesai!</h2>
-							<p style="text-align:center">Terimakasih atas waktunya, data anda berhasil di simpan.</p>
-						<ul class="list-inline text-center">
-							<li><button type="button" class="btn btn-default prev-step">Sebelumnya</button></li>
-                            <li><button type="button" class="btn btn-primary next-step">Buka Dashboard</button></li>
-                        </ul>
+							<form action="" method="POST" name="datsis">
+								<div class="tab-content">
+									<div class="tab-pane active" role="tabpanel" id="step1">
+										<h3>Setup Username</h3>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Username" name="user">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Password" name="pass">
+										</div>
+										<ul class="list-inline pull-right">
+											<li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+										</ul>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="step2">
+										<h3>Data Siswa</h3>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Nama Lengkap" name="nama" value="<?php echo $nama_siswa;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="NISN" name="nis" value="<?php echo $nis;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" value="<?php echo $tempat_lahir;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir" value="<?php echo $tanggal_lahir;?>" required>
+											<span id="helpBlock" class="help-block">Format tanggal: 31 Mei 1998</span>
+										</div>
+										<div class="form-group">
+											<select class="form-control" name="kelamin" required>
+											<?php if($kelamin == "") { ?>
+												<option>--Jenis Kelamin--</option>
+												<option>Laki-laki</option>
+												<option>Perempuan</option>
+											<?php	
+											} else if($kelamin == "Laki-laki") { ?>
+												<option>Laki-laki</option>
+												<option>Perempuan</option>
+												<option>--Jenis Kelamin--</option>
+											<?php
+											} else {
+											?>
+												<option>Perempuan</option>
+												<option>Laki-laki</option>
+												<option>--Jenis Kelamin--</option>
+											<?php
+											} ?>
+											</select>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Anak ke" name="anak_ke" value="<?php echo $anak_ke;?>" required>
+										</div>
+										<div class="form-group">
+											<textarea class="form-control" rows="3" placeholder="Alamat Siswa" name="alamat_siswa" required><?php echo $alamat_siswa;?></textarea>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="No Telepon Siswa" name="no_telpon_anak" value="<?php echo $no_telpon_anak;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Asal Sekolah" name="asal_sekolah" value="<?php echo $asal_sekolah;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Diterima di kelas" name="asal_kelas" value="<?php echo $asal_kelas;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Diterima pada tanggal" name="tgl_terima" value="<?php echo $tgl_terima;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Nama Ayah" name="nama_ayah" value="<?php echo $nama_ayah;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Nama Ibu" name="nama_ibu" value="<?php echo $nama_ibu;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Alamat Orang Tua" name="alamat_ortu" value="<?php echo $alamat_ortu;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Nomor Telepon Rumah" name="no_telpon_ortu" value="<?php echo $no_telpon_ortu;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Pekerjaan Ayah" name="pekerjaan_ayah" value="<?php echo $pekerjaan_ayah;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Pekerjaan Ibu" name="pekerjaan_ibu" value="<?php echo $pekerjaan_ibu;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Nama Wali" nama="nama_wali" value="<?php echo $nama_wali;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Alamat Wali" nama="alamat_wali" value="<?php echo $alamat_wali;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Nomor Telepon Wali" nama="no_telpon_wali" value="<?php echo $no_telpon_wali;?>" required>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" placeholder="Pekerjaan Wali" name="pekerjaan_wali" value="<?php echo $pekerjaan_wali;?>" required>
+										</div>
+										<ul class="list-inline pull-right">
+											<li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+											<li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+										</ul>
+									</div>
+									<div class="tab-pane" role="tabpanel" id="complete">
+										<h3>Selesai</h3>
+										<p>Kamu sudah menyelesaikan semua tahap registrasi, silahkan klik tombol finish untuk selesai.</p>
+										<button type="submit" class="btn btn-primary next-step" name="setup">Finish</button>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
 						</div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </form>
-        </div>
-   </div>
-</div>
-</div>
-<div class="footer"><i class="fa fa-copyright"></i> 2016. SINO V.4.0 Dibuat oleh IT Club SMAN 1 Cibadak</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="footer"><i class="fa fa-copyright"></i> 2016. SINO V.4.0 Dibuat oleh IT Club SMAN 1 Cibadak</div>
 <!-- Akhir Halaman -->
 </div>
-
+</div>
 	
 <!-- Javascript -->
 <script src="../assets/js/jquery.js"></script>
