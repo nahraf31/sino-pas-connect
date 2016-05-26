@@ -31,75 +31,162 @@
 <?php
 	}
 ?>
- 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
 
 <head>
-	<title>SINO - Sistem Informasi Nilai Online</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/custom.css" />
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
-	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link rel="icon" type="image/x-icon" href="assets/images/favicon.png"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	</head>
-<body>
-	<!-- Form Login -->
-	<section id="login">
-		<img class="logo" src="assets/images/logo-sino.png">
-		<form class="form-inline space-top" action="index.php" method="post" name="postform">
-			<?php 
-			if (isset($_GET['status'])) {
-				if ($_GET['status']==1) {
-			?>
-						<p class="bg-danger">Username atau Password yang Anda masukan salah.</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Sistem Informasi Nilai Online</title>
 
-			<?php	
-				} else if ($_GET['status']==2) {
-			?>
-						<p class="bg-success">Anda sudah keluar, jika ingin masuk kembali silahkan login.</p>
-			<?php			
-				}
-			}	
-			?>
-			<div class="form-group">
-				<div class="input-group space-top">
-					<div class="input-group-addon"><i class="fa fa-user"></i></div>
-						<input class="form-control" placeholder="ID User" name="username" type="text">
+    <!-- Memanggil CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+	<!-- Memanggil Font dan Ikon-->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.png"/>
+</head>
+<body>
+<!-- Menu Atas -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#home">SINO PAS CONNECT</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="#about">About</a></li>
+			<li><a href="#features">Features</a></li>
+			<li><a href="#team">Team</a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+<!-- Akhir Menu Atas -->
+<!--Header -->
+	<section class="bg-1" id="home">
+	<div class="container header">
+			<div class="row" style="text-align:center">
+				<div class="sidebar-brand"><img src="assets/images/logo-sino-dark.png"></div>
+			</div>
+			<div class="row" style="margin-top:30px;margin-bottom:30px;text-align:center">
+				<div class="login-box">
+					<h4>Ketahui nilai Anda segera!</h4>
+					<form action="index.php" method="post" name="postform">
+						<div class="form-group">
+							<div class="inner-addon left-addon space-top">
+							  <i class="fa fa-user"></i>
+							  <input type="text" class="form-control" placeholder="Username" name="username" required title="Masukan username Anda"/>
+							</div>
+							<div class="inner-addon left-addon space-top">
+							  <i class="fa fa-lock"></i>
+							  <input type="password" class="form-control" placeholder="Password" name="password" required title="Masukan password Anda"/>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary" style="width:100%" name="login" data-loading-text="Loading...">Login</button>
+					</form>
+				<div class="alert-login">
+					<?php 
+					if (isset($_GET['status'])) {
+						if ($_GET['status']==1) {
+					?>
+								<div class="alert alert-danger">
+								  Username atau password salah
+								</div>
+								<div class="alert alert-info">
+								  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								  Hubungi Admin bila masalah terus berlanjut.
+								</div>
+
+					<?php	
+						} else if ($_GET['status']==2) {
+					?>
+								<div class="alert alert-success">
+								  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								  Anda telah berhasil keluar.
+								</div>
+					<?php			
+						}
+					}	
+					?>
 				</div>
-				<div class="input-group space-top">
-					<div class="input-group-addon"><i class="fa fa-lock"></i></div>
-						<input class="form-control" placeholder="Password" name="password" onFocus="this.value=''" type="password">
+			
+			</div>
+
+				
+			</div>
+	</div>	
+	</section>
+	<!--/parallax 1-->
+
+	<section class="bg-2" id="about">
+	<div class="container">
+		<div class="col-sm-12 text-center space-top">
+			<h2>About</h2>
+		</div>
+		<div class="row">
+			<p class="text-center">
+			SINO merupakan aplikasi web yang memungkinkan para pelajar mengetahui nilainya secara online, mudah, cepat dan rahasia. Sehingga user tidak perlu khawatir privasi data miliknya diketahui oleh orang lain. SINO sendiri merupakan singkatan dari "Sistem Informasi Nilai Online", pengembangan web ini terinspirasi dari aplikasi Pas Connect. Sehingga dalam versi ini kami menggunakan nama "SINO Pas Connect".
+		</div>
+		<div class="row"> 
+			<!--step 1-->
+			<div class="col-md-4" style="text-align:center">
+				<div class="feature">
+					<img class="feature-img" src="assets/images/responsiv.svg" alt="Easy to use"> 
+					<h4 class="space-top">Mudah digunakan</h4>
+					<p>Dengan UI yang sederhana, teknologi web yang mutahir, dan desain yang responsive. Membuat SINO dapat digunakan dengan mudah dan dapat diakses melalui perangkat apapun</p>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-primary space-top" style="width:100%" name="login">Login</button>
-		</form>
-	</section>
-	<!-- Akhir Form Login -->
-	
-	<!-- Footer -->
-	<div class="footer">
-		<i class="fa fa-copyright"></i>2016. Dibuat oleh IT Club SMAN 1 Cibadak
+			<div class="col-md-4" style="text-align:center">
+				<div class="feature">
+					<img class="feature-img" src="assets/images/privasi.svg" alt="Data Safe"> 
+					<h4 class="space-top">100% Privasi</h4>
+					<p>Kami sangat menghargai privasi Anda. Kami menjamin user lain tidak dapat mengetahui data nilai Anda</p>
+				</div>
+			</div>
+			<div class="col-md-4" style="text-align:center">
+				<div class="feature">
+					<img class="feature-img" src="assets/images/akurat.svg" alt="Data Real"> 
+					<h4 class="space-top">Data yang akurat</h4>
+					<p>Data yang diimpor ke database kami merupakan hasil scanning lembar jawaban komputer. Selama Anda mengisi LJK dengan baik, maka data yang ada 100% akurat.</p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<!-- Akhir Footer -->
-	<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-77179797-1', 'auto');
-		  ga('send', 'pageview');
-	</script>
-		
-	<!-- BEGIN JIVOSITE CODE {literal} -->
-	<script type='text/javascript'>
-		(function(){ var widget_id = 'br7vcqFLWo';
-		var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/geo-widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
-	</script>
-	<!-- {/literal} END JIVOSITE CODE -->
-</body>	
+	</section>
+	<section class="bg-3" id="team">
+	<div class="container-fluid">
+		<row>
+		<div class="text-center">
+			<div class="call-to-action">
+				<h3>Made with <i class="fa fa-heart"></i> for SMAN 1 Cibadak</h3>
+			</div>
+		</div>
+		<div class="text-center">
+			<div class="call-to-action">
+				<a class="btn btn-default">Meet our team</a>
+			</div>
+		</div>
+		</row>
+	</div>
+	</section>
+<!-- Javascript -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/sino.js"></script>
+<!-- Akhir Javascript -->
+</body>
 </html>
