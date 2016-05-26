@@ -57,7 +57,7 @@
     <link href="../assets/css/style.css" rel="stylesheet">
 	<!-- Memanggil Font dan Ikon-->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../assets/fonts/font-awesome/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="../assets/images/favicon.png"/>
 </head>
 
@@ -92,38 +92,40 @@
 <!-- Menu Atas -->
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<div class="navbar-header"><a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i></a></div>
-			<ul class="nav navbar-right top-nav">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<i class="fa fa-bell-o"><span class="bubble"></span></i>
-					</a>
-					
-					<ul class="dropdown-menu message-dropdown">
-						<li class="message-header">
-							Notifikasi
-						</li>
-						<?php
-							$view=$pdo->query("SELECT info FROM info ORDER BY id_info desc");
-							while($row = $view->fetch(PDO::FETCH_ASSOC)){
-						?>
-						<li class="message-preview">
-							<p><?php echo $row['info'];?></p>
-						</li>
-						<?php
-							}
-						?>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
-					<ul class="dropdown-menu">
-						<li><a href="settings/"><i class="fa fa-cog"></i>    Pengaturan</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="../dashboard/logout"><i class="fa fa-sign-out"></i>    Logout</a></li>
-					</ul>
-				</li>
-			</ul>
+			<div class="navbar-header dashboard">
+				<a href="#menu-toggle" class="btn" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				<ul class="nav menu-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-bell-o"><span class="bubble"></span></i>
+						</a>
+						
+						<ul class="dropdown-menu message-dropdown">
+							<li class="message-header">
+								Notifikasi
+							</li>
+							<?php
+								$view=$pdo->query("SELECT info FROM info ORDER BY id_info desc");
+								while($row = $view->fetch(PDO::FETCH_ASSOC)){
+							?>
+							<li class="message-preview">
+								<p><?php echo $row['info'];?></p>
+							</li>
+							<?php
+								}
+							?>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+						<ul class="dropdown-menu">
+							<li><a href="settings/"><i class="fa fa-cog"></i>    Pengaturan</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="../dashboard/logout"><i class="fa fa-sign-out"></i>    Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 <!-- Akhir Menu Atas -->
