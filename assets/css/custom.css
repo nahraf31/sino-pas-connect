@@ -1,0 +1,119 @@
+
+#login{
+	text-align: center;
+	padding: 50px 20px;
+	width: 350px;
+	margin: auto;
+}
+@media (max-width: 360px){
+#login{	
+width: 96%
+}
+}
+img.logo{
+	width:250px;
+}
+.space-top{
+	margin-top:25px;
+}
+.fa{
+	font-size:20px;
+}
+.footer{
+	margin-top:50px;
+	margin-bottom:20px;
+    text-align: center;
+}
+#notification_li
+{
+position:relative
+}
+#notificationContainer {    
+	background-color: #fff;
+    border: 1px solid rgb(236, 239, 244);
+    overflow: visible;
+    position: absolute;
+    top: 30px;
+    margin-left: -210px;
+    width: 300px;
+    z-index: 100;
+    margin-top: 40px;
+	color:#212121;
+	display:none;
+}
+// Popup Arrow
+#notificationContainer:before {
+content: '';
+display: block;
+position: absolute;
+width: 0;
+height: 0;
+color: transparent;
+border: 10px solid black;
+border-color: transparent transparent white;
+margin-top: -20px;
+margin-left: 188px;
+
+}
+#notificationTitle
+{
+font-weight: bold;
+padding: 8px;
+font-size: 13px;
+display: blcok;
+border-bottom: 1px solid #ededed;
+height: 50px;
+line-height: 34px;
+background: #fbfbfb;
+color: #8A8A8A;
+}
+#notificationsBody{
+max-height: 300px;
+overflow: auto;
+}
+#notificationFooter{
+font-weight: bold;
+padding: 8px;
+font-size: 13px;
+display: blcok;
+border-bottom: 1px solid #ededed;
+height: 50px;
+line-height: 34px;
+background: #fbfbfb;
+text-align:center;
+transition: 1s ease;
+
+}
+#notificationFooter:hover{
+background:#ECECEC;
+transition: 1s ease;
+}
+nav ul li #notificationFooter a {
+color: #8A8A8A;
+font-size:13px;
+text-transform:uppercase;
+}
+#notification_count 
+{
+padding: 3px 7px 3px 7px;
+background: #cc0000;
+color: #ffffff;
+font-weight: bold;
+margin-left: 77px;
+border-radius: 9px;
+-moz-border-radius: 9px; 
+-webkit-border-radius: 9px;
+position: absolute;
+margin-top: -11px;
+font-size: 11px;
+}
+.side-nav .text{    
+	background-color: #3e4347;
+    padding: 20px;
+    font-size: 14px;
+    text-align: center;
+	line-height: 14pt;
+}
+.side-nav .text span{
+	font-weight:700;
+}
