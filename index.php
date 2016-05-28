@@ -56,7 +56,7 @@
 <body>
 <!-- Menu Atas -->
 	<nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container-fluid">
+	  <div class="container">
 		<div class="navbar-header">
 		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 			<span class="sr-only">Toggle navigation</span>
@@ -138,8 +138,9 @@
 			<h2>About</h2>
 		</div>
 		<div class="row">
-			<p class="text-center">
-			SINO merupakan aplikasi web yang memungkinkan para pelajar mengetahui nilainya secara online, mudah, cepat dan rahasia. Sehingga user tidak perlu khawatir privasi data miliknya diketahui oleh orang lain. SINO sendiri merupakan singkatan dari "Sistem Informasi Nilai Online", pengembangan web ini terinspirasi dari aplikasi Pas Connect. Sehingga dalam versi ini kami menggunakan nama "SINO Pas Connect".
+			<div class="col-sm-12 text-center space-top">
+				<p>SINO merupakan aplikasi web yang memungkinkan para pelajar mengetahui nilainya secara online, mudah, cepat dan rahasia. Sehingga user tidak perlu khawatir privasi data miliknya diketahui oleh orang lain. SINO sendiri merupakan singkatan dari "Sistem Informasi Nilai Online", pengembangan web ini terinspirasi dari aplikasi Pas Connect. Sehingga dalam versi ini kami menggunakan nama "SINO Pas Connect".
+			</div>
 		</div>
 		<div class="row"> 
 			<!--step 1-->
@@ -168,7 +169,7 @@
 	</div>
 	</section>
 	<section class="bg-3" id="team">
-	<div class="container-fluid">
+	<div class="container">
 		<row>
 		<div class="text-center">
 			<div class="call-to-action">
@@ -186,7 +187,34 @@
 <!-- Javascript -->
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/sino.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 <!-- Akhir Javascript -->
 </body>
 </html>

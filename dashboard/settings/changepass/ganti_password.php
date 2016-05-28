@@ -18,186 +18,190 @@
 		header('Location: ../'); 
 	}
 ?>
+
 <!DOCTYPE html>
-  <html>
-    <head>
-		  <title><?php echo $nama_siswa; ?> - SINO</title>
-		  <!--Import Google Icon Font-->
-		  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-		  <link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.png"/>
-		  <!--Import materialize.css-->
-		  <link type="text/css" rel="stylesheet" href="../../../assets/css/materialize.min.css"  media="screen,projection"/>
-		  <link type="text/css" rel="stylesheet" href="../../../assets/css/custom.css"  media="screen,projection"/>
-		  <link rel="stylesheet" href="../../../assets/font/font-awesome/css/font-awesome.min.css">
-		  <!--Let browser know website is optimized for mobile-->
-		  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-	<body>
-		<!-- Navbar-->
-		<nav>
-			<div class="nav-wrapper">
-				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right">	
-				<li id="notification_li">
-					<a href="#" id="notificationLink"><i class="fa fa-bell-o"></i></a>
-						<div id="notificationContainer">
-							<div id="notificationTitle">Pemberitahuan</div>				
-								<div id="notificationsBody" class="notifications">
-								<?php
-									$view=$pdo->query("SELECT info FROM info ORDER BY id_info desc");
-									while($row = $view->fetch(PDO::FETCH_ASSOC)){
-								?>
-										<ul class="collection">
-											<li class="collection-item avatar">
-												<i class="material-icons circle green">insert_chart</i>
-												<p><?php echo $row['info'];?></p>
-											</li>
-										</ul>
-								<?php
-									}
-								?>
-								</div>
-						</div>
-					</li>
-					<li>
-						<a href="../../logout"><i class="fa fa-sign-out"></i></a>
-					</li>
-				</ul>
-				<ul class="side-nav" id="mobile-demo">
-					<div class="logo">
-						<a href="#"><img class="logo-sino" src="../../../assets/images/logo-sino-dark.png"></a>
-					</div>
-					<p class="text"><span><?php echo $nama_siswa; ?></span></br><?php echo $nama_kelas; ?></p>
-					<li><a href="../../">Home</a></li>
-					<li><a href="../../nilai/uhar.php">Ulangan Harian</a></li>
-					<li><a href="../../nilai/uts.php">Ulangan Tengah Semester</a></li>
-					<li><a href="../../nilai/uas.php">Ulangan Akhir Semester</a></li>
-					<li class="active"><a href="../settings/">Pengaturan</a></li>
-				</ul>
-			</div>
-		</nav>
-		<!-- Akhir Navbar-->
+<html lang="en">
 
-		<!-- Sidebar-->
-		<div class="side-nav fixed">
-			<div class="logo">
-				<a href="#"><img class="logo-sino" src="../../../assets/images/logo-sino-dark.png"></a>
-			</div>
-			<p class="text"><span><?php echo $nama_siswa; ?></span></br><?php echo $nama_kelas; ?></p>
-			<li><a href="../../">Home</a></li>
-			<li><a href="../../nilai/uhar.php">Ulangan Harian</a></li>
-			<li><a href="../../nilai/uts.php">Ulangan Tengah Semester</a></li>
-			<li><a href="../../nilai/uas.php">Ulangan Akhir Semester</a></li>
-			<li class="active"><a href="../settings/">Pengaturan</a></li>
-		</div>
-		<!-- Akhir Sidebar-->
+<head>
 
-		<!--Konten-->
-		<main>
-			<div class="container">
-				<div class="row">
-					<h1 class="judul-halaman">Ganti Password</h1>
-				</div>
-				<div class="row">
-				<?php 
-					if(isset($_POST['login'])){
-						$nis=$_POST['nis'];
-						$query=$pdo->query("SELECT * FROM data_siswa WHERE nis='$nis'");
-						$row=$query->fetch(PDO::FETCH_ASSOC);
-						$oldp=$_POST['old_pass'];
-						$roldp=$row['password'];
-						$newp=$_POST['new_pass'];
-						$rnewp=$_POST['rnew_pass'];
-						$query=0;
-						if ($oldp == $roldp && $newp == $rnewp) {
-							$query=$pdo->query("UPDATE data_siswa SET password='$newp' WHERE nis='$nis'");
-							$exe=$query->fetch(PDO::FETCH_ASSOC);
-						} else if(!$query) {
-							echo "Gagal ganti password";
-						}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>Edit Password - SINO</title>
+
+    <!-- Memanggil CSS -->
+    <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+	<!-- Memanggil Font dan Ikon-->
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../../../assets/fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.png"/>
+</head>
+
+<body>
+<div id="wrapper">
+<!-- Sidebar -->
+	<div id="sidebar-wrapper">
+		<ul class="sidebar-nav">
+			<li class="sidebar-brand"><img src="../../../assets/images/logo-sino-dark.png"></li>
+			<li><a href="../../"><i class="fa fa-home"></i>&nbsp; &nbsp; Dashboard</a></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart"></i>&nbsp; &nbsp;Nilai Ulangan &nbsp;<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="../../nilai/uhar.php">Ulangan Harian</a></li>
+				<li><a href="../../nilai/uts.php">Ulangan Tengah Semester</a></li>
+				<li><a href="../../nilai/uas_1.php">Ulangan Akhir Semester</a></li>
+			  </ul>
+			</li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i>&nbsp; &nbsp;Bantuan &nbsp;<span class="caret"></span></a>
+			  <ul class="dropdown-menu" role="menu">
+				<li><a href="#">FAQ</a></li>
+				<li><a href="#">Documentation</a></li>
+				<li><a href="#">Meet team</a></li>
+				<li><a href="#">Feedback</a></li>
+			  </ul>
+			</li>
+		</ul>
+	</div>
+<!-- Akhir Sidebar -->
+<div id="page-content-wrapper">
+<!-- Menu Atas -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header dashboard">
+				<a href="#menu-toggle" class="btn" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				<ul class="nav menu-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-bell-o"><span class="bubble"></span></i>
+						</a>
 						
-						if ($query) {
-							echo "Berhasil ganti password";
+						<ul class="dropdown-menu message-dropdown">
+							<li class="message-header">
+								Notifikasi
+							</li>
+							<?php
+								$view=$pdo->query("SELECT info FROM info ORDER BY id_info desc");
+								while($row = $view->fetch(PDO::FETCH_ASSOC)){
+							?>
+							<li class="message-preview">
+								<p><?php echo $row['info'];?></p>
+							</li>
+							<?php
+								}
+							?>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+						<ul class="dropdown-menu">
+							<li class="active"><a href="../settings"><i class="fa fa-cog"></i>    Edit Password</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="../logout"><i class="fa fa-sign-out"></i>    Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+<!-- Akhir Menu Atas -->
+	  
+<!-- Isi Halaman -->
+	<section class="page-header">
+		<div class="row">
+			<div class="col-md-12">
+				<ol class="breadcrumb">
+				  <li><a href="../../">Dashboard</a></li>
+				  <li><a href="../">Pengaturan</a></li>
+				  <li class="active"><a href="../changepass">Edit Password</a></li>
+				</ol>
+				<h1>Edit Password</h1>
+				<h5><?php echo $nama_siswa; ?> <span class="label label-default"><?php echo $nama_kelas; ?></span></h5>
+			</div>
+		</div>
+	</section>
+	<section class="page-content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<?php 
+						if(isset($_POST['login'])){
+							$nis=$_POST['nis'];
+							$query=$pdo->query("SELECT * FROM data_siswa WHERE nis='$nis'");
+							$row=$query->fetch(PDO::FETCH_ASSOC);
+							$oldp=$_POST['old_pass'];
+							$roldp=$row['password'];
+							$newp=$_POST['new_pass'];
+							$rnewp=$_POST['rnew_pass'];
+							$query=0;
+							if ($oldp == $roldp && $newp == $rnewp) {
+								$query=$pdo->query("UPDATE data_siswa SET password='$newp' WHERE nis='$nis'");
+								$exe=$query->fetch(PDO::FETCH_ASSOC);
+							} else if(!$query) {
+					?>
+					<div class="alert alert-danger">
+					  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					  Gagal, kemungkinan password lama salah atau pengulangan password baru tidak sama
+					</div>	
+					<?php	
+						} if ($query) {
+					?>
+					<div class="alert alert-success">
+					  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					  Berhasil! Password baru telah disimpan, ingatkan dan amankan password baru Anda
+					</div>
+					<?php
 						}
 					}
-				?>
-						<form action="../changepass/" method="post" name="pass">
-							<input type="hidden" name="nis" value="<?php echo $nis; ?>">
-							<div class="row">
-								<div class="input-field col s12">
-									<input placeholder="Password Lama" name="old_pass" type="password" class="validate" required>
-									<label for="password">Password Lama</label>
-								</div>
-							</div>
-							<div class="row">
-								<div class="input-field col s12">
-									<input placeholder="Password Baru" name="new_pass" type="password" class="validate" required>
-									<label for="password">Password Baru</label>
-								</div>
-							</div>
-							<div class="row">
-								<div class="input-field col s12">
-									<input placeholder="Masukan Ulang Password Baru" name="rnew_pass" type="password" class="validate" required>
-									<label for="password">Ketik ulang password baru</label>
-								</div>
-							</div>
-								<button class="btn waves-effect waves-light" type="submit" name="login">Ganti</button>
-						</form>
+					?>
+					
+					
+					
 				</div>
 			</div>
-		<!--Akhir Konten-->	
+			<form action="../changepass/" method="post" name="pass">
+				<input type="hidden" name="nis" value="<?php echo $nis; ?>">
+				<div class="row">
+					<div class="col-md-8">
+						<label for="password">Password Lama</label>
+						<input placeholder="Masukan Password Lama" name="old_pass" type="password" class="form-control" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<label for="password">Password Baru</label>
+						<input placeholder="Masukan Password Baru" name="new_pass" type="password" class="form-control" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<label for="password">Ketik ulang password baru</label>
+						<input placeholder="Masukan Ulang Password Baru" name="rnew_pass" type="password" class="form-control" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						<button class="btn btn-primary" type="submit" name="login">Ganti</button>
+					</div>
+				</div>
+			</form>
+		</div>	
+	</section>
+	<footer><i class="fa fa-copyright"></i> 2016. SINO V.4.0 Dibuat oleh IT Club SMAN 1 Cibadak</footer>
+<!-- Akhir Halaman -->
+</div>
+</div>
 	
-		<!--Footer-->
-			<div class="footer">
-				<i class="fa fa-copyright"></i>2015. Dibuat oleh IT Club SMAN 1 Cibadak
-			</div>
-		</main>
-		<!--Akhir Footer-->
-		<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="../../../assets/js/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="../../../assets/js/materialize.min.js"></script>
-		<script>  $(".button-collapse").sideNav();</script>
-		<script type="text/javascript" src="../../../assets/js/countup.js"></script>
-		<script type="text/javascript" >
-			$(document).ready(function()
-			{
-			$("#notificationLink").click(function()
-			{
-			$("#notificationContainer").fadeToggle(300);
-			$("#notification_count").fadeOut("slow");
-			return false;
-			});
-
-			//Document Click hiding the popup 
-			$(document).click(function()
-			{
-			$("#notificationContainer").hide();
-			});
-
-			//Popup on click
-			$("#notificationContainer").click(function()
-			{
-			return false;
-			});
-
-			});
-		</script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-77179797-1', 'auto');
-		  ga('send', 'pageview');
-		</script>
-		
-		<!-- BEGIN JIVOSITE CODE {literal} -->
-		<script type='text/javascript'>
-			(function(){ var widget_id = 'br7vcqFLWo';
-			var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/geo-widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();
-		</script>
-		<!-- {/literal} END JIVOSITE CODE -->
-	</body>
+<!-- Javascript -->
+<script src="../../../assets/js/jquery.js"></script>
+<script src="../../../assets/js/bootstrap.min.js"></script>
+<script src="../../../assets/js/main.js"></script>
+<script src="../../../assets/js/parallax.js"></script>
+<!-- Akhir Javascript 
+</body>
 </html>

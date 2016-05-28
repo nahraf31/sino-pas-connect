@@ -6,8 +6,9 @@
 
 /*---------------------------------------
  GLOBAL STYLES
- 1. FORM STYLE
- 2. BREADCRUMB
+ 1. TYPOGRAPHY
+ 2. FORM STYLE
+ 3. BREADCRUMB
 ---------------------------------------*/
 body{
 	font-family: 'Montserrat', sans-serif;
@@ -19,11 +20,30 @@ body{
 body .fa{
 	display:inline;
 }
+/*1. Typography*/
 p {
 	font-size:13px;
+	line-height:1.8;
+	color:#8B8D8D
+}
+.navbar-default .navbar-nav > li > a{
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 13px;
+	-webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.navbar-default .navbar-nav > li > a:hover{
+	color:#3498db;
+	-webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-/*1. Form Style*/
+/*2. Form Style*/
 
 .form-control {
     height: 40px;
@@ -60,7 +80,32 @@ p {
 .right-addon input { padding-right: 35px; }
 
 
-/*2. Breadcrumb*/
+/*3. Button*/
+
+.btn{
+	-webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+	-webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn-primary{
+	background:#3498db;
+	border:#3498db;
+}
+.btn-primary:hover{
+	background:#2980b9;
+	border:#2980b9;
+}
+
+/*4. Breadcrumb*/
 
 .breadcrumb{
 	background:none;
@@ -69,6 +114,9 @@ p {
 }
 .breadcrumb > li > a {
 	color:#fff;
+}
+.breadcrumb > li.active> a >  {
+	font-weight:800
 }
 
 
@@ -305,32 +353,6 @@ ul.alert-dropdown {
     margin-right: -250px;
 }
 
-.page-header {
-    background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35) ,rgba(0, 0, 0, 0.75) ), url(../images/bg.jpg) no-repeat center;
-    margin-top: 0px;
-    padding: 50px 20px;
-    z-index: 10;
-    background-size: cover;
-    color: #fff;
-	
-}
-
-.hero{
-	font-weight: 800;
-    font-size: 25px;
-}
-.sub-hero{
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-
-.page-content {
-	margin:10px 0px;
-    background: #fff;
-    padding: 20px;
-    box-shadow: RGBA(0, 0, 0, 0.08) 0px 0px 2px 1px;
-}
-
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -358,6 +380,84 @@ ul.alert-dropdown {
     }
 }
 
+.page-header {
+    background: linear-gradient( rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../images/bg.jpg) no-repeat center fixed;
+    margin-top: 0px;
+    padding: 50px 20px;
+    z-index: 10;
+    background-size: cover;
+    color: #fff;
+}
+
+.page-header .label-default {
+    background: rgba(0, 0, 0, 0.30);
+}
+
+.choose .strong{
+	font-size: 18px;
+    font-weight: 700;
+    padding: 3px 0px;
+
+}
+.choose  .pagination {
+    margin: 0;
+}
+
+.choose .pagination > li > a{
+	border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+    border: solid 2px #fff;
+    background: transparent;
+    color: #fff;
+    font-weight: 400;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+.choose .pagination > li > a:hover, .choose .pagination > .active > a,.choose .pagination > .active > a:hover {
+	background:#fff;
+	color: #3498db;
+	border: solid 2px #fff;
+}
+
+@media(max-width:768px){
+	.choose .row{
+		text-align:center;
+	}
+}
+.page-content {
+	margin:15px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: RGBA(0, 0, 0, 0.08) 0px 0px 2px 1px;
+}
+.page-content .row{
+	margin:8px -25px;
+}
+.page-content.primary{
+	background: #3498db;
+	color: #fff;
+}
+
+.page-content.primary p{
+	color:#fff;
+}
+.page-content .hero{
+	font-weight: 800;
+    font-size: 25px;
+}
+
+.page-content .sub-hero{
+    font-weight: 800;
+    margin-bottom: 10px;
+}
 
 
 /*---------------------------------------
@@ -376,7 +476,7 @@ section {
 /* 1. Background Section Type */
  
 .bg-1 {
-	background: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50) ,rgba(0, 0, 0, 0.75) ), url('../images/bg.jpg') no-repeat center center fixed;
+	background: linear-gradient( rgba(41, 128, 185, 0.79), rgba(41, 128, 185, 0.79)), url('../images/bg.jpg') no-repeat center center fixed;
     color:#fff;
     background-size:cover;
 }
@@ -399,11 +499,14 @@ section {
 
 .container.header .login-box {
     padding: 40px 30px;
-    background: #fff;
-    color: #626262;
-	width:350px;
-	margin:auto;
-	position:relative;
+	background: #fff;
+	color: #626262;
+	width: 350px;
+	margin: auto;
+	position: relative;
+	border: #eee solid 1px;
+	border-radius: 6px;
+	box-shadow:0 0 10px rgba(0,0,0,.40);
 }
 
 .feature{
@@ -457,6 +560,7 @@ section {
 	margin-bottom:20px;
 	padding: 15px;
 	display:inline-table;
+	overflow:hidden;
 }
 
 .nilai.lulus {
@@ -469,20 +573,21 @@ section {
 
 .nilai .rate {
 	font-weight: 700;
-	font-size: 50px;
+	font-size: 35px;
 	margin: 0;
 	line-height: 45px;
 }
 
-.nilai span {
-	margin: 0;
-	font-size: 12px;
+.nilai p {
+	line-height: 12px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+
 }
 
-.biru{
-	background: #0094DE;
-	color: #fff;
-}
+
 
 .bio {
     border-bottom: solid 1px #E0E0E0;
@@ -491,6 +596,31 @@ section {
 
 .atas{
 	font-weight:600;
+}
+
+.settings .icon {
+    width: 35px;
+    display: inline-table;
+    font-size: 20px;
+    top: 7px;
+    position: relative;
+    left: 10px;
+}
+
+.settings .main{
+	width:80%;
+	display:inline-table;
+}
+
+.settings .action{
+	width:50px;
+	display:inline-table;
+}
+
+@media( max-width : 585px ){
+	.settings .main{
+		width:60%;
+	}
 }
 
 .wizard {
@@ -644,13 +774,13 @@ span.round-tab:hover {
  FOOTER STYLES
 ---------------------------------------*/
 
-#footer {
+footer {
     text-align: center;
     color: #a4a4a4;
     padding: 30px;
 }
 
-#footer a {
+footer a {
   color:#efefef;
 }
 

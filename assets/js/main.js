@@ -1,15 +1,8 @@
-$(function(){
-		// this will get the full URL at the address bar
-		var url = window.location.href; 
-
-		// passes on every "a" tag 
-		$("#sidebar-wrapper a").each(function() {
-				// checks if its the same on the address bar
-			if(url == (this.href)) { 
-				$(this).closest("li").addClass("active");
-			}
-		});
-	});
+/*!
+ * SINO Pas Connect v.4
+ * Copyright 2015-2016 ITC Smandak Team.
+ * Author: Alvira Mohamad
+ */
 	
 	
 $("#menu-toggle").click(function(e) {

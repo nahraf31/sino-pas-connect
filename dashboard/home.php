@@ -50,10 +50,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
-    <title>Sistem Informasi Nilai Online</title>
+    <title>Dashboard - SINO</title>
 
     <!-- Memanggil CSS -->
-    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
 	<!-- Memanggil Font dan Ikon-->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
@@ -67,7 +67,7 @@
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand"><img src="../assets/images/logo-sino-dark.png"></li>
-			<li><a href="../dashboard/"><i class="fa fa-home"></i>&nbsp; &nbsp; Dashboard</a></li>
+			<li class="active"><a href="../dashboard/"><i class="fa fa-home"></i>&nbsp; &nbsp; Dashboard</a></li>
 			<li class="dropdown">
 			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart"></i>&nbsp; &nbsp;Nilai Ulangan &nbsp;<span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
@@ -131,20 +131,20 @@
 <!-- Akhir Menu Atas -->
 	  
 <!-- Isi Halaman -->
-	<div class="page-header">
+	<section class="page-header">
 		<ol class="breadcrumb">
 		  <li class="active"><a href="../dashboard/">Dashboard</a></li>
 		</ol>
 		<h1>Dashboard</h1>
 		<h5><?php echo $nama_siswa; ?> <span class="label label-default"><?php echo $nama_kelas; ?></span></h5>
-	</div>
-	<div class="container-fluid">
-		<div class=" page-content biru">
+	</section>
+	<section class="page-content primary">
+		<div class="container-fluid">
 			<div class="row">
 			  <div class="col-md-9">
 				<div class="hero">Hai <?php echo $nama_siswa; ?>!</div>
 				<div class="sub-hero">Selamat datang di SINO Pas Connect.</div>
-				<p>Melalui aplikasi web ini dapatkan informasi nilai anda secara online, mudah dan cepat. Saran dan masukan Anda sangat diperlukan demi pengembangan aplikasi web ini.</p>
+				<p>Melalui aplikasi web ini dapatkan informasi nilai anda secara online, mudah, cepat dan rahasia. Saran dan masukan Anda sangat diperlukan demi pengembangan aplikasi web ini.</p>
 			  </div>
 			  <div class="col-md-3">
 				  <div class="pull-right">
@@ -153,7 +153,9 @@
 			  </div>
 			</div>
 		</div>
-		<div class=" page-content">
+	</section>
+	<section class="page-content">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 				  <h2>Data Siswa</h2>
@@ -248,8 +250,8 @@
 				</div>
 			</div>
 		</div>
-	</div>
-    <div class="footer"><i class="fa fa-copyright"></i> 2016. SINO V.4.0 Dibuat oleh IT Club SMAN 1 Cibadak</div>
+	</section>
+	<footer><i class="fa fa-copyright"></i> 2016. SINO V.4.0 Dibuat oleh IT Club SMAN 1 Cibadak</footer>
 <!-- Akhir Halaman -->
 </div>
 </div>
@@ -257,7 +259,8 @@
 <!-- Javascript -->
 <script src="../assets/js/jquery.js"></script>
 <script src="../assets/js/bootstrap.min.js"></script>
-<script src="../assets/js/sino.js"></script>
-<!-- Akhir Javascript -->
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/parallax.js"></script>
+<!-- Akhir Javascript 
 </body>
 </html>

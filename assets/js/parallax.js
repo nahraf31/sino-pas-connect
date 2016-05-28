@@ -4,6 +4,7 @@
  *
  */
  
+ 
 (function($) {
  
     $.fn.parallax = function(options) {
@@ -43,7 +44,7 @@
     }
 }(jQuery));
 
-$('.bg-1,.bg-3').parallax({
+$('.bg-1,.bg-3,.page-header').parallax({
 	speed :	0.15
 });
 
