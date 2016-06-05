@@ -56,7 +56,7 @@
 				</p>
 				<li><a href="../">Dashboard</a></li>
 				<li><a href="../DataSiswa">Data Siswa</a></a></li>
-				<?php if($row['jabatan'] == 'Administrator') {
+				<?php if($bow['jabatan'] == 'Administrator') {
 				?>
 					<li><a href="../DataAdmin/">Data Admin</a></li>
 				<?php }
@@ -65,6 +65,7 @@
 				<li><a href="../SetupKelas/">Setup Kelas</a></li>
 				<li class="active"><a href="../notifikasi/">Tambah Notifikasi &rarr; Edit</a></li>
 				<li><a href="../UploadNilai/">Upload Nilai</a></li>
+				<li><a href="../Settings/">Pengaturan</a></li>
 		</div>
 		<main>
 			<div class="container">

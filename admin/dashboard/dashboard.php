@@ -59,6 +59,7 @@
 				<li><a href="../dashboard/SetupKelas/">Setup Kelas</a></li>
 				<li><a href="../dashboard/notifikasi/">Tambah Notifikasi</a></li>
 				<li><a href="../dashboard/UploadNilai/">Upload Nilai</a></li>
+				<li><a href="../dashboard/Settings/">Pengaturan</a></li>
 		</div>
 		<main>
 			<div class="container">

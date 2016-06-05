@@ -4,15 +4,17 @@
 
 	if(!isset($_SESSION['user']))
 	{
-		header("Location: ../../");
+		$row['nama_admin'] = 0;
+		header("Location: ../../../");
+	} else {
+		$res=$pdo->query("SELECT * FROM user_admin WHERE id_admin=".$_SESSION['user']);
+		$row=$res->fetch(PDO::FETCH_ASSOC);
 	}
-	$res=$pdo->query("SELECT * FROM user_admin WHERE id_admin=".$_SESSION['user']);
-	$row=$res->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Data Siswa - <?php echo $row['nama_admin']; ?> </title>
+		<title>Settings - <?php echo $row['nama_admin']; ?> </title>
 		<!--Import Google Icon Font-->
 		<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -47,7 +49,7 @@
 					<span><b><?php echo $row['nama_admin']; ?></b></span></br><?php echo $row['jabatan']; ?>
 				</p>
 				<li><a href="../">Dashboard</a></li>
-				<li class="active"><a href="../DataSiswa/">Data Siswa</a></li>
+				<li><a href="../DataSiswa/">Data Siswa</a></li>
 				<?php if($row['jabatan'] == 'Administrator') {
 				?>
 					<li><a href="../DataAdmin/">Data Admin</a></li>
@@ -57,16 +59,15 @@
 				<li><a href="../SetupKelas/">Setup Kelas</a></li>
 				<li><a href="../notifikasi/">Tambah Notifikasi</a></li>
 				<li><a href="../UploadNilai/">Upload Nilai</a></li>
-				<li><a href="../Settings/">Pengaturan</a></li>
+				<li class="active"><a href="../Settings/">Pengaturan</a></li>
 		</div>
 		<main>
 			<div class="container">
 				<div class="col s12">
-					<h2>Data Siswa</h2>
+					<h2>Selamat datang<b> <?php echo $row['nama_admin'];?></b>!</h2>
 					<div class="row">
 						<div class="col s12">
-							<a href="infosis.php" class="waves-effect waves-light btn">Info Siswa</a>
-							<a href="addsis.php" class="waves-effect waves-light btn">Tambah Siswa</a>
+							<a href="../Settings/changepass" class="waves-effect waves-light btn">Ganti Password</a>
 						</div>
 					</div>
 				</div>
@@ -75,13 +76,11 @@
 		<i class="fa fa-copyright"></i>2015. Dibuat oleh IT Club SMAN 1 Cibadak
 	</div>
   
-	</main>
-
-          
+	</main>          
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="../../assets/js/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="../../assets/js/materialize.min.js"></script>
+      <script type="text/javascript" src="../assets/js/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
 	  <script>  $(".button-collapse").sideNav();</script>
-	  <script type="text/javascript" src="../../assets/js/countup.js"></script>
+	  <script type="text/javascript" src="../assets/js/countup.js"></script>
 	  </body>
-</html>
+  </html>

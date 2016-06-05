@@ -83,6 +83,7 @@
 				<li class="active"><a href="../SetupKelas/">Setup Kelas</a></li>
 				<li><a href="../notifikasi/">Tambah Notifikasi</a></li>
 				<li><a href="../UploadNilai/">Upload Nilai</a></li>
+				<li><a href="../Settings/">Pengaturan</a></li>
 		</div>
 		<main>
 			<div class="container">
