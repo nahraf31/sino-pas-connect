@@ -1,5 +1,10 @@
 <?php  
-	include('../../connect/conn.php');
+	session_start();
+	include_once '../../connect/conn.php';
+	if(!isset($_SESSION['user']))
+	{
+		header("Location: ../../../");
+	}
     $tugas = $_POST['info'];  
    
     $query = $pdo->query("INSERT into info SET info='$tugas'");  
