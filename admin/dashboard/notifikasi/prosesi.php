@@ -1,10 +1,5 @@
 <?php
-	session_start();
-	include_once '../../connect/conn.php';
-	if(!isset($_SESSION['user']))
-	{
-		header("Location: ../../../");
-	}
+	include('../../connect/conn.php');//cek apakah sudah login 
 	$id=$_POST['id_info'];
 	$info=$_POST['info'];
 	//Disini query untuk mengupdate

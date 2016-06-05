@@ -52,15 +52,11 @@
 				<a href="#"><img class="logo-sino" src="../../assets/images/logo-sino-admin.png"></a>
 			</div>
 				<p class="text">
-					<span><b><?php echo $bow['nama_admin']; ?></b></span></br><?php echo $bow['jabatan']; ?>
+						<span><b><?php echo $bow['nama_admin']; ?></b></span></br><?php echo "Jabatan Admin"; ?>
 				</p>
 				<li><a href="../">Dashboard</a></li>
 				<li><a href="../DataSiswa">Data Siswa</a></a></li>
-				<?php if($bow['jabatan'] == 'Administrator') {
-				?>
-					<li><a href="../dashboard/DataAdmin/">Data Admin</a></li>
-				<?php }
-				?>
+				<li><a href="../DataAdmin/">Data Admin</a></li>
 				<li><a href="../SetupPelajaran/">Setup Pelajaran</a></li>
 				<li><a href="../SetupKelas/">Setup Kelas</a></li>
 				<li class="active"><a href="../notifikasi/">Tambah Notifikasi &rarr; Edit</a></li>
