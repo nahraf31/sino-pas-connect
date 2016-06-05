@@ -6,6 +6,9 @@
 	{
 		header("Location: ../../");
 	} else {
+		if($row['jabatan'] != 'Administrator') {
+			header("Location: ../");
+		}
 		$res=$pdo->query("SELECT * FROM user_admin WHERE id_admin=".$_SESSION['user']);
 		$row=$res->fetch(PDO::FETCH_ASSOC);
 		$pdo->query("DELETE FROM user_admin WHERE id_admin='$_GET[id]'");

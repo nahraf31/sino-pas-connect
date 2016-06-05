@@ -39,6 +39,9 @@
 			$status=2;
 		}
 	}
+	if($row['jabatan'] != 'Administrator') {
+		header("Location: ../");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -76,7 +79,7 @@
 				<a href="#"><img class="logo-sino" src="../../assets/images/logo-sino-admin.png"></a>
 			</div>
 				<p class="text">
-						<span><b><?php echo $row['nama_admin']; ?></b></span></br><?php echo "Jabatan Admin"; ?>
+					<span><b><?php echo $row['nama_admin']; ?></b></span></br><?php echo $row['jabatan']; ?>
 				</p>
 				<li><a href="../">Dashboard</a></li>
 				<li><a href="../DataSiswa">Data Siswa</a></a></li>
