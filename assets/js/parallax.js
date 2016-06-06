@@ -48,6 +48,6 @@ $('.bg-1,.bg-3,.page-header').parallax({
 	speed :	0.15
 });
 
-$('.bg-2').parallax({
-	speed :	0.25
+$('.bg-4').parallax({
+	speed :	0.05
 });

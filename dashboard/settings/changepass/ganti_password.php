@@ -24,21 +24,20 @@
 
 <head>
 
-    <meta charset="utf-8">
+   <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="SINO merupakan aplikasi web yang memungkinkan para pelajar mengetahui nilainya secara online, mudah, cepat dan rahasia. Sehingga user tidak perlu khawatir privasi data miliknya diketahui oleh orang lain. SINO sendiri merupakan singkatan dari "Sistem Informasi Nilai Online", pengembangan web ini terinspirasi dari aplikasi Pas Connect. Sehingga dalam versi ini kami menggunakan nama "SINO Pas Connect".">
+    <meta name="author" content="Rizqi Farhan, Alvira Mohamad, Rizky Ilhamsyah, Alfian Isnan, Adhiyatma Nugraha, M.Irsyad">
 	
-    <title>Edit Password - SINO</title>
+    <title>Edit Password - <?php echo $nama_siswa; ?></title>
 
     <!-- Memanggil CSS -->
-    <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
-    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/css/main.css" rel="stylesheet">
 	<!-- Memanggil Font dan Ikon-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="../../../assets/fonts/font-awesome/css/font-awesome.min.css">
 	<link rel="icon" type="image/x-icon" href="../../../assets/images/favicon.png"/>
 </head>
 
@@ -48,9 +47,9 @@
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand"><img src="../../../assets/images/logo-sino-dark.png"></li>
-			<li><a href="../../"><i class="fa fa-home"></i>&nbsp; &nbsp; Dashboard</a></li>
+			<li><a href="../../../dashboard/"><i class="material-icons">dashboard</i>Dashboard</a></li>
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-line-chart"></i>&nbsp; &nbsp;Nilai Ulangan &nbsp;<span class="caret"></span></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">pie_chart_outlined</i>Nilai Ulangan &nbsp;<span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="../../nilai/uhar.php">Ulangan Harian</a></li>
 				<li><a href="../../nilai/uts.php">Ulangan Tengah Semester</a></li>
@@ -58,7 +57,7 @@
 			  </ul>
 			</li>
 			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i>&nbsp; &nbsp;Bantuan &nbsp;<span class="caret"></span></a>
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">help_outline</i>Bantuan &nbsp;<span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
 				<li><a href="#">FAQ</a></li>
 				<li><a href="#">Documentation</a></li>
@@ -74,11 +73,11 @@
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header dashboard">
-				<a href="#menu-toggle" class="btn" id="menu-toggle"><i class="fa fa-bars"></i></a>
+				<a href="#menu-toggle" class="menu" id="menu-toggle"><i class="material-icons">menu</i></a>
 				<ul class="nav menu-nav">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="fa fa-bell-o"><span class="bubble"></span></i>
+							<i class="material-icons">notifications_none</i><span class="bubble"></span></i>
 						</a>
 						
 						<ul class="dropdown-menu message-dropdown">
@@ -98,11 +97,11 @@
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="material-icons">more_vert</i></a>
 						<ul class="dropdown-menu">
-							<li class="active"><a href="../settings"><i class="fa fa-cog"></i>    Edit Password</a></li>
+							<li><a class= "active" href="../"><i class="material-icons">settings</i>Pengaturan</a></li>
 							<li role="separator" class="divider"></li>
-							<li><a href="../logout"><i class="fa fa-sign-out"></i>    Logout</a></li>
+							<li><a href="../../logout"><i class="material-icons">power_settings_new</i>Logout</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -186,6 +185,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-8">
+						<a href="../"class="btn btn-default">Batal</a>
 						<button class="btn btn-primary" type="submit" name="login">Ganti</button>
 					</div>
 				</div>
